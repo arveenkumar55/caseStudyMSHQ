@@ -1,0 +1,65 @@
+ CREATE TABLE Tickets (
+  id              INT           NOT NULL    IDENTITY(1000, 1)    PRIMARY KEY,
+  title           VARCHAR(100)  NOT NULL,
+  category   VARCHAR(100)  NOT NULL,
+  createdBy        VARCHAR(100)  NOT NULL,
+  createdName        VARCHAR(100)  NOT NULL,
+  ticketDescription  VARCHAR(512)  NOT NULL,
+  imageUrl  VARCHAR(max) ,
+  deptName VARCHAR(100),
+  ticketPriority VARCHAR(100),  
+  ticketStatus  VARCHAR(100) ,
+  AssignedBy  VARCHAR(100)  ,
+  AssignedByName  VARCHAR(100)  ,
+  AssignedToID  VARCHAR(100)  ,
+  AssignedToName VARCHAR(100) ,  
+  creationDate VARCHAR(100)  ,
+  AssignDate VARCHAR(100)  ,
+  ResolveDate VARCHAR(100)  )
+
+
+
+  CREATE TABLE TicketComments (
+  id              INT           NOT NULL    IDENTITY    PRIMARY KEY,
+  ticketID           INT  NOT NULL,
+  updatedDate   VARCHAR(100)  NOT NULL,
+  updatedBy        VARCHAR(100)  NOT NULL,
+  ticketComments  VARCHAR(512)  NOT NULL,
+)
+
+
+
+ CREATE TABLE Users (
+  ID              INT           NOT NULL    IDENTITY    PRIMARY KEY,
+  FirstName           VARCHAR(100)  NOT NULL,
+  LastName   VARCHAR(100)  NOT NULL,
+  cusTechRole        VARCHAR(100)  NOT NULL,
+  email  VARCHAR(100)  NOT NULL,
+  Pass  VARCHAR(100)  NOT NULL,
+  Ispromotion  INT,
+  isPasswordVerifed INT,
+  isSuperManager INT
+)
+
+
+-- Actual password : georgia123
+
+CREATE TABLE Department (
+  ID              INT           NOT NULL    IDENTITY    PRIMARY KEY,
+  DeptName           VARCHAR(100)  NOT NULL,
+  DeptDesc   VARCHAR(100)  NOT NULL,
+  ManagerEmail  VARCHAR(100)  NOT NULL
+)
+
+
+CREATE TABLE ticketSummary (
+  ID              INT           NOT NULL    IDENTITY    PRIMARY KEY,
+  deptName VARCHAR(100)  NOT NULL,
+  Jan INT,
+  Feb INT,
+  March INT,
+  April INT,
+  May INT,
+  June INT,
+  ticketStatus  VARCHAR(100)  NOT NULL,
+)
